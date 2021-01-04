@@ -20,6 +20,7 @@ app.use(
 )
 
 app.post('/api/register', authCtrl.registerUser)
+app.post('/api/login', authCtrl.login)
 app.delete('/api/logout', authCtrl.logout)
 
 massive({
