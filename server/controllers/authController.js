@@ -1,5 +1,5 @@
-module.exports {
-    findUser: (req, res) => {
+module.exports = {
+    // findUser: (req, res) => {
 
-    }
+    // }
 }
