@@ -23,5 +23,10 @@ module.exports = {
         req.session.user = newUser;
 
         res.status(200).send(newUser)
+    },
+
+    logout: (req, res) => {
+        req.session.destroy();
+        res.sendStatus(200)
     }
 }

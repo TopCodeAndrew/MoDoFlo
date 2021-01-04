@@ -20,6 +20,7 @@ app.use(
 )
 
 app.post('/api/register', authCtrl.registerUser)
+app.delete('/api/logout', authCtrl.logout)
 
 massive({
     connectionString: CONNECTION_STRING,
