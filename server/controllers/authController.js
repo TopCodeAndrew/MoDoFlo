@@ -6,7 +6,13 @@ module.exports = {
 
         const { email, password } = req.body;
 
-        // First, just get it to be able to post WITHOUT checking to see if the user exists (I will add that functionality later)
+        // Add check func below
+        const [existingUser] = await db.find_user([email])
+
+        if (existingUser) {
+            return res.status(404).send('User already exists')
+        }
+        // Add check func above
 
         const salt = bcrypt.genSaltSync(10);
 
