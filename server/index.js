@@ -19,7 +19,7 @@ app.use(
     })
 )
 
-// app.post('/api/register', authCtrl.registerUser)
+app.post('/api/register', authCtrl.registerUser)
 
 massive({
     connectionString: CONNECTION_STRING,
