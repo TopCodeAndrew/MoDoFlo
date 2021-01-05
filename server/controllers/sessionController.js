@@ -23,7 +23,18 @@ module.exports = {
             })
     },
 
-    getSingleSession: async (req, res) => { },
+    getSingleSession: async (req, res) => {
+        const db = req.app.get('db')
+
+        const { user_id } = req.session.user
+        const { session_id } = req.params
+        // console.log(user_id, session_id)
+
+        db.find_one_user_session([user_id, session_id])
+            .then(session => {
+                res.status(200).send(session)
+            })
+    },
 
     editSession: async (req, res) => { },
 

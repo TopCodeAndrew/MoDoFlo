@@ -26,6 +26,7 @@ app.delete('/api/logout', authCtrl.logout)
 // Session Controllers
 app.post('/api/sessions', sessionCtrl.createNewSession)
 app.get('/api/sessions', sessionCtrl.getAllSessions)
+app.get('/api/sessions/:session_id', sessionCtrl.getSingleSession)
 
 
 massive({
