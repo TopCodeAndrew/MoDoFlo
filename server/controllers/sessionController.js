@@ -28,7 +28,6 @@ module.exports = {
 
         const { user_id } = req.session.user
         const { session_id } = req.params
-        // console.log(user_id, session_id)
 
         db.find_one_user_session([user_id, session_id])
             .then(session => {
@@ -36,7 +35,18 @@ module.exports = {
             })
     },
 
-    editSession: async (req, res) => { },
+    editSession: async (req, res) => {
+        const db = req.app.get('db')
+        console.log('made it here')
+        const { user_id } = req.session.user
+        const { session_id } = req.params
+        const { title } = req.body
+
+        db.find_one_user_session([title, user_id, session_id])
+            .then(session => {
+                res.status(200).send(session)
+            })
+    },
 
     deleteSession: async (req, res) => { },
 }
