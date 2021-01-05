@@ -43,8 +43,12 @@ module.exports = {
         console.log(title)
 
         db.edit_session([title, user_id, session_id])
-            .then(session => {
-                res.sendStatus(200)
+            .then(dbRes => {
+                // Destructure just the name off
+                let [session] = dbRes
+                let { session_name } = session
+
+                res.status(200).send(session_name)
             })
     },
 
