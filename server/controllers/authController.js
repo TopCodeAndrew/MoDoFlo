@@ -36,6 +36,8 @@ module.exports = {
 
         req.session.user = existingUser
 
+        console.log(existingUser.user_id)
+
         res.status(200).send(existingUser)
     },
 

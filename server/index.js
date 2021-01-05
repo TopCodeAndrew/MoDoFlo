@@ -18,10 +18,14 @@ app.use(
         cookie: { maxAge: 1000 * 60 * 60 * 24 },
     })
 )
-
+//  Auth Controllers
 app.post('/api/register', authCtrl.registerUser)
 app.post('/api/login', authCtrl.login)
 app.delete('/api/logout', authCtrl.logout)
+
+// Session Controllers
+app.post('/api/sessions', sessionCtrl.createNewSession)
+
 
 massive({
     connectionString: CONNECTION_STRING,
