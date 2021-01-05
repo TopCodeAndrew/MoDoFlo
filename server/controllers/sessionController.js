@@ -37,14 +37,14 @@ module.exports = {
 
     editSession: async (req, res) => {
         const db = req.app.get('db')
-        console.log('made it here')
         const { user_id } = req.session.user
         const { session_id } = req.params
         const { title } = req.body
+        console.log(title)
 
-        db.find_one_user_session([title, user_id, session_id])
+        db.edit_session([title, user_id, session_id])
             .then(session => {
-                res.status(200).send(session)
+                res.sendStatus(200)
             })
     },
 
