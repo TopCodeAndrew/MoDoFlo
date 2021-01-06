@@ -40,7 +40,6 @@ module.exports = {
         const { user_id } = req.session.user
         const { session_id } = req.params
         const { title } = req.body
-        console.log(title)
 
         db.edit_session([title, user_id, session_id])
             .then(dbRes => {
@@ -75,6 +74,5 @@ module.exports = {
                 res.sendStatus(200)
             })
     },
-
 
 }
