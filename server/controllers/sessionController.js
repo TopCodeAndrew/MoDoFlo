@@ -52,5 +52,15 @@ module.exports = {
             })
     },
 
-    deleteSession: async (req, res) => { },
+    deleteSession: async (req, res) => {
+        const db = req.app.get('db')
+
+        const { user_id } = req.session.user
+        const { session_id } = req.params
+
+        db.delete_session([user_id, session_id])
+            .then(session => {
+                res.sendStatus(200)
+            })
+    },
 }
