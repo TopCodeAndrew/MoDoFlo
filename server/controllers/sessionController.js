@@ -63,4 +63,18 @@ module.exports = {
                 res.sendStatus(200)
             })
     },
+
+    createBlock: async (req, res) => {
+        const db = req.app.get('db')
+
+        const { blockTypeId } = req.body
+        const { session_id } = req.params
+
+        db.create_block([session_id, blockTypeId])
+            .then(session => {
+                res.sendStatus(200)
+            })
+    },
+
+
 }

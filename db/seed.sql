@@ -26,3 +26,13 @@ ALTER TABLE "block" ADD FOREIGN KEY ("block_type_id") REFERENCES "block_type" ("
 ALTER TABLE "session" ADD FOREIGN KEY ("owner_user_id") REFERENCES "users" ("user_id");
 
 ALTER TABLE "block" ADD FOREIGN KEY ("session_id") REFERENCES "session" ("session_id");
+
+INSERT INTO block_type
+(type_name, type_id)
+VALUES
+('work', 1);
+
+INSERT INTO block_type
+(type_name, type_id)
+VALUES
+('break', 2);

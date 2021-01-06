@@ -3,7 +3,6 @@ const express = require('express');
 const massive = require('massive')
 const session = require('express-session');
 const authCtrl = require('./controllers/authController');
-const blockCtrl = require('./controllers/blockController');
 const sessionCtrl = require('./controllers/sessionController');
 const { SERVER_PORT, CONNECTION_STRING, SESSION_SECRET } = process.env;
 
@@ -29,6 +28,7 @@ app.get('/api/sessions', sessionCtrl.getAllSessions)
 app.get('/api/sessions/:session_id', sessionCtrl.getSingleSession)
 app.put('/api/sessions/:session_id', sessionCtrl.editSession)
 app.delete('/api/sessions/:session_id', sessionCtrl.deleteSession)
+app.post('/api/block/:session_id', sessionCtrl.createBlock)
 
 
 massive({
