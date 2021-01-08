@@ -1,9 +1,13 @@
 {
     "version": 3,
-    "mappings": "AAGA,AAAA,IAAI,CAAC;EACH,UAAU,EAAE,MAAM;EAClB,gBAAgB,EAAE,KAAK;CACxB;;AAID,AAAA,KAAK,CAAC;EACJ,gBAAgB,EAAE,OAAO;CAC1B;;ACZD,AAAA,OAAO,CAAA;EACH,gBAAgB,EDDJ,IAAI;CCGjB",
+    "mappings": "AAAA,AAAA,CAAC,CAAA;EACC,MAAM,EAAE,CAAC;EACT,UAAU,EAAE,UAAU;CACvB;;AAKD,AAAA,IAAI,CAAC;EACH,UAAU,EAAE,MAAM;EAClB,gBAAgB,EAAE,KAAK;CACxB;;ACXD,AAAA,OAAO,CAAA;EACH,gBAAgB,EDIJ,IAAI;CCFjB;;ACHH,AAAA,QAAQ,CAAA;EACJ,gBAAgB,EAAE,OAAkB;CACrC;;ACFH,AAAA,KAAK,CAAA;EACD,gBAAgB,EAAE,GAAG;CAEtB;;AAED,AAAA,MAAM,CAAA;EACJ,gBAAgB,EAAE,IAAI;EACtB,KAAK,EAAC,KAAK;CAEZ;;ACTH,AAAA,UAAU,CAAA;EACN,gBAAgB,EAAE,MAAM;CAEzB;;ACHH,AAAA,QAAQ,CAAA;EACJ,gBAAgB,EAAE,MAAM;CACzB",
     "sources": [
         "App.scss",
-        "../3-Header/_header.scss"
+        "../3-Header/_header.scss",
+        "../4-Landing/_landing.scss",
+        "../5-Auth/_auth.scss",
+        "../6-Dashboard/_dashboard.scss",
+        "../7-Session/_session.scss"
     ],
     "names": [],
     "file": "App.css"

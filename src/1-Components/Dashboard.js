@@ -1,8 +1,8 @@
-import React from 'react'
+import React from 'react';
 
 export default function DASHBOARD() {
 
     return (
-        <div>THIS IS THE DASHBOARD ELEMENT</div>
+        <div className='dashboard'>THIS IS THE DASHBOARD ELEMENT</div>
     )
 }

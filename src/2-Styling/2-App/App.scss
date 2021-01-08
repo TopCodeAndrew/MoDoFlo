@@ -1,3 +1,8 @@
+*{
+  margin: 0;
+  box-sizing: border-box;
+};
+
 $primaryColor : gray;
 
 
@@ -6,10 +11,9 @@ $primaryColor : gray;
   background-color: green;
 }
 
+@import '../3-Header/header';
+@import '../4-Landing/landing';
+@import '../5-Auth/auth';
+@import '../6-Dashboard/dashboard';
+@import '../7-Session/session'
 
-
-.test {
-  background-color: hotpink;
-}
-
-@import '../3-Header/header'

@@ -1,13 +1,36 @@
+* {
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
 .App {
   text-align: center;
   background-color: green;
 }
 
-.test {
-  background-color: hotpink;
-}
-
 .header {
   background-color: gray;
+}
+
+.landing {
+  background-color: #b3ecdb;
+}
+
+.auth {
+  background-color: red;
+}
+
+.login {
+  background-color: blue;
+  color: white;
+}
+
+.dashboard {
+  background-color: yellow;
+}
+
+.session {
+  background-color: purple;
 }
 /*# sourceMappingURL=App.css.map */
