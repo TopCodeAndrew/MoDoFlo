@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import './2-Styling/1-Index/index.scss';
+import App from './App.js';
 import { HashRouter } from 'react-router-dom';
-import reportWebVitals from './reportWebVitals';
+import reportWebVitals from './Odds & Ends/reportWebVitals';
 
 ReactDOM.render(
   <HashRouter>
