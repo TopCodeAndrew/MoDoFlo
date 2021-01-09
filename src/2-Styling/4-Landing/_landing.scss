@@ -1,6 +1,15 @@
 .landing{
+    // width: 100vw;
     background-color: rgb(179, 236, 219);
+    .laptop-photo{
+      width: 33vw;
+    }
+
+
+
     @media (max-width: 500px) {
-      background-color: purple
+      .laptop-photo{
+        width: 50px;
+      }
     }
   }

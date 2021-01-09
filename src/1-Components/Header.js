@@ -4,10 +4,19 @@ export default function Header() {
 
     return (
         <div className="header">
-            HEADER
-            <p className="headerP">
-                HEADER P
-            </p>
+            <p className='title'> MODOFLO</p>
+            <span className='to-auth'>
+                <div className='link'>
+                    <p>
+                        LOGIN
+                    </p>
+                </div>
+                <div className='link'>
+                    <p>
+                        REGISTER
+                    </p>
+                </div>
+            </span>
         </div>
     )
 }

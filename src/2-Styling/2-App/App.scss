@@ -3,15 +3,20 @@
   box-sizing: border-box;
 };
 
-$primaryColor : gray;
+$firstColor : #fbec24;
+$secondColor : #45344d;
+$thirdColor : #5c5462;
+$fourthColor: #9c8e8e;
+$fifthColor: #9b786f;
 
 
 .App {
   text-align: center;
-  background-color: green;
+  background-color: $fourthColor;
   min-height: 80vh;
+  width: 100vw;
   @media (max-width: 500px) {
-    background-color: purple
+    
   };
   
   }
