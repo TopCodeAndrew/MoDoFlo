@@ -7,30 +7,88 @@
 .App {
   text-align: center;
   background-color: green;
+  min-height: 80vh;
+}
+
+@media (max-width: 500px) {
+  .App {
+    background-color: purple;
+  }
 }
 
 .header {
   background-color: gray;
 }
 
+@media (max-width: 500px) {
+  .header {
+    background-color: purple;
+  }
+}
+
 .landing {
   background-color: #b3ecdb;
+}
+
+@media (max-width: 500px) {
+  .landing {
+    background-color: purple;
+  }
 }
 
 .auth {
   background-color: red;
 }
 
-.login {
+@media (max-width: 500px) {
+  .auth {
+    background-color: purple;
+    color: green;
+  }
+}
+
+.auth .register {
   background-color: blue;
-  color: white;
+}
+
+@media (max-width: 500px) {
+  .auth .register {
+    background-color: purple;
+    color: green;
+  }
+}
+
+.auth .login {
+  background-color: #4a5844;
+  color: pink;
+}
+
+@media (max-width: 500px) {
+  .auth .login {
+    background-color: orange;
+    color: black;
+  }
 }
 
 .dashboard {
   background-color: yellow;
 }
 
+@media (max-width: 500px) {
+  .dashboard {
+    background-color: purple;
+    color: green;
+  }
+}
+
 .session {
   background-color: purple;
+}
+
+@media (max-width: 500px) {
+  .session {
+    background-color: purple;
+    color: green;
+  }
 }
 /*# sourceMappingURL=App.css.map */

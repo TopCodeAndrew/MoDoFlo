@@ -9,7 +9,15 @@ $primaryColor : gray;
 .App {
   text-align: center;
   background-color: green;
-}
+  min-height: 80vh;
+  @media (max-width: 500px) {
+    background-color: purple
+  };
+  
+  }
+
+
+
 
 @import '../3-Header/header';
 @import '../4-Landing/landing';

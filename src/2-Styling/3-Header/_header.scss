@@ -1,4 +1,6 @@
 .header{
     background-color: $primaryColor;
-   
+    @media (max-width: 500px) {
+      background-color: purple
+    };   
   }
