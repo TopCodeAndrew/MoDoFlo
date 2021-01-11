@@ -1,6 +1,9 @@
 *{
   margin: 0;
+  padding:0;
   box-sizing: border-box;
+  position: static;
+  max-width: 100%;
 };
 
 $firstColor : #fbec24;
@@ -12,21 +15,15 @@ $fifthColor: #9b786f;
 
 .App {
   text-align: center;
-  background-color: $fourthColor;
-  min-height: 80vh;
-  width: 100vw;
-  @media (max-width: 500px) {
-    
-  };
-  
+  background-color: $thirdColor;
+  min-height: 120vh;
+  width: 100%;
+  // @media (max-width: 500px) {
+  // };
   }
-
-
-
 
 @import '../3-Header/header';
 @import '../4-Landing/landing';
 @import '../5-Auth/auth';
 @import '../6-Dashboard/dashboard';
-@import '../7-Session/session'
-
+@import '../7-Session/session';

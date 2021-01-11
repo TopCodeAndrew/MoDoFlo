@@ -1,20 +1,23 @@
 * {
   margin: 0;
+  padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  position: static;
+  max-width: 100%;
 }
 
 .App {
   text-align: center;
-  background-color: #9c8e8e;
-  min-height: 80vh;
-  width: 100vw;
+  background-color: #5c5462;
+  min-height: 120vh;
+  width: 100%;
 }
 
 .header {
-  background-color: #fbec24;
-  height: 80px;
-  width: 100vw;
+  background-color: #5c5462;
+  height: 50px;
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -37,6 +40,7 @@
   font-size: 25px;
   font-weight: 600;
   margin-left: 5vw;
+  color: #fbec24;
 }
 
 .header .to-auth {
@@ -53,7 +57,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  color: white;
+  color: #45344d;
   display: flex;
   justify-content: space-between;
   width: 33vw;
@@ -63,7 +67,7 @@
 }
 
 .header .to-auth .link {
-  background-color: #9b786f;
+  background-color: #fbec24;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -76,8 +80,8 @@
       -ms-flex-align: center;
           align-items: center;
   border-radius: 15px;
-  -webkit-box-shadow: 3px 3px 3px 2px rgba(0, 0, 0, 0.8);
-          box-shadow: 3px 3px 3px 2px rgba(0, 0, 0, 0.8);
+  -webkit-box-shadow: 1px 1px 10px 1px white;
+          box-shadow: 1px 1px 10px 1px white;
   margin-right: 15px;
 }
 
@@ -91,7 +95,6 @@
     font-size: 15px;
     margin-left: 10px;
     min-width: 50px;
-    background-color: grey;
   }
   .header .to-auth .link {
     height: 50%;
@@ -132,16 +135,64 @@
 }
 
 .landing {
-  background-color: #b3ecdb;
+  width: 100vw;
+  height: 800px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  overflow: hidden;
+  position: relative;
 }
 
 .landing .laptop-photo {
-  width: 33vw;
+  max-width: none;
+  width: 2000px;
+  min-width: 100%;
+  opacity: .5;
+  overflow: hidden;
+}
+
+.landing .title {
+  color: white;
+  font-size: 30px;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+  top: 200px;
+  min-width: 250px;
+  z-index: 1;
+}
+
+.landing .title #doing {
+  margin: 0;
+}
+
+.landing .title #simple {
+  margin: 0;
+  font-size: 260px;
 }
 
 @media (max-width: 500px) {
+  .landing .landing {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
   .landing .laptop-photo {
-    width: 50px;
+    width: 100vw;
   }
 }
 
