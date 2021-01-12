@@ -1,20 +1,21 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 
 export default function Header() {
 
     return (
         <div className="header">
-            <p className='title'> MODOFLO</p>
+            <Link to='/' className='title'> MODOFLO</Link>
             <span className='to-auth'>
                 <div className='link'>
-                    <p>
+                    <Link className='go' to='/login'>
                         LOGIN
-                    </p>
+                    </Link>
                 </div>
                 <div className='link'>
-                    <p>
+                    <Link className='go' to='/register'>
                         REGISTER
-                    </p>
+                    </Link>
                 </div>
             </span>
         </div>

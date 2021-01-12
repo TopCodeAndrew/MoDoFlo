@@ -7,15 +7,15 @@
     // align-items: center;
     overflow: hidden;
     position: relative;
-    // background-color: rgba(255, 255, 0, 0.212);
+    background-color: rgba(61, 56, 61, 0.993);
 
     .laptop-photo{
       // width: 100%;
       // height: 100%;
       max-width: none;
-      width: 2000px;
+      width: 1850px;
       min-width: 100%;
-      opacity: .5;
+      opacity: .45;
       overflow: hidden;
     }
 
@@ -29,7 +29,7 @@
       left: 0;
       right: 0;
       text-align: center;
-      top: 200px;
+      top: 230px;
       min-width: 250px;
       z-index: 1;
       #doing{
@@ -38,19 +38,35 @@
 
       #simple{
         margin: 0;
-        font-size: 260px;
+        font-size: 220px;
       }
     }
     
 
 
-    @media (max-width: 500px) {
-      .landing{
-        justify-content: center;
-        align-items: center;
-      }
+    @media (max-width: 970px) {
+      height: 600px;
       .laptop-photo{
-        width: 100vw;
+        width: 1350px;
+      }
+      .title{
+        top: 210px;
+        #simple{
+          font-size: 100px;
+        }
       }
     }
-  }
+
+    @media (max-width: 530px) {
+      height: 300px;
+      .laptop-photo{
+        width: 675px;
+      }
+      .title{
+        top: 80px;
+        #simple{
+          font-size: 90px;
+        }
+      }
+    }
+  };

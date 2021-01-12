@@ -8,8 +8,8 @@ export default function Landing() {
             <img className='laptop-photo' src={photo} alt='simple laptop' />
 
             <span className='title'>
-                <p id='doing'> Make Doing</p>
-                <p id='simple'> SIMPLE </p>
+                <p id='doing'> make doing</p>
+                <p id='simple'> S I M P L E </p>
             </span>
         </div>
     )

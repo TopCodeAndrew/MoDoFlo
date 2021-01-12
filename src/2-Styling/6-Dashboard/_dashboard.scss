@@ -1,5 +1,5 @@
 .dashboard{
-    background-color: yellow;
+    background-color: $secondColor;
     @media (max-width: 500px) {
       background-color: purple;
       color:green;

@@ -149,11 +149,12 @@
           justify-content: center;
   overflow: hidden;
   position: relative;
+  background-color: rgba(88, 81, 88, 0.993);
 }
 
 .landing .laptop-photo {
   max-width: none;
-  width: 2000px;
+  width: 1850px;
   min-width: 100%;
   opacity: .5;
   overflow: hidden;
@@ -168,7 +169,7 @@
   left: 0;
   right: 0;
   text-align: center;
-  top: 200px;
+  top: 230px;
   min-width: 250px;
   z-index: 1;
 }
@@ -179,55 +180,41 @@
 
 .landing .title #simple {
   margin: 0;
-  font-size: 260px;
+  font-size: 220px;
 }
 
-@media (max-width: 500px) {
-  .landing .landing {
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+@media (max-width: 970px) {
+  .landing {
+    height: 600px;
   }
   .landing .laptop-photo {
-    width: 100vw;
+    width: 1350px;
+  }
+  .landing .title {
+    top: 210px;
+  }
+  .landing .title #simple {
+    font-size: 100px;
+  }
+}
+
+@media (max-width: 530px) {
+  .landing {
+    height: 300px;
+  }
+  .landing .laptop-photo {
+    width: 675px;
+  }
+  .landing .title {
+    top: 80px;
+  }
+  .landing .title #simple {
+    font-size: 90px;
   }
 }
 
 .auth {
-  background-color: red;
-}
-
-@media (max-width: 500px) {
-  .auth {
-    background-color: purple;
-    color: green;
-  }
-}
-
-.auth .register {
-  background-color: blue;
-}
-
-@media (max-width: 500px) {
-  .auth .register {
-    background-color: purple;
-    color: green;
-  }
-}
-
-.auth .login {
-  background-color: #4a5844;
-  color: pink;
-}
-
-@media (max-width: 500px) {
-  .auth .login {
-    background-color: orange;
-    color: black;
-  }
+  background-color: #45344d;
 }
 
 .dashboard {
