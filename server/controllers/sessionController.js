@@ -58,8 +58,8 @@ module.exports = {
         const { session_id } = req.params
 
         db.delete_session([user_id, session_id])
-            .then(session => {
-                res.sendStatus(200)
+            .then(sessions => {
+                res.status(200).send(sessions)
             })
     },
 

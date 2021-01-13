@@ -4,9 +4,8 @@ import { connect } from 'react-redux';
 
 
 function Dashboard(props) {
-    const [sessions, setSessions] = useState(["there are no sessions"])
+    const [sessions, setSessions] = useState([])
     console.log(sessions)
-    const { userID } = props
 
     useEffect(() => {
 
@@ -16,13 +15,20 @@ function Dashboard(props) {
         })
     }, [])
 
+    let deleteSession = async (id) => {
+        await axios.delete(`/api/sessions/${id}`).then(res => {
+            setSessions(res.data)
+        })
+    }
+
     let mappedSessions = sessions.map(e => {
         return (
             <div>
+                <h3></h3>
                 <h1 onClick={() => console.log(`clicked on ${e.session_id}`)}>
                     {e.session_name}
                 </h1>
-                <button>delete</button>
+                <button onClick={() => deleteSession(e.session_id)} >delete</button>
                 <button>edit name</button>
                 <button>test</button>
             </div>
@@ -32,7 +38,13 @@ function Dashboard(props) {
 
 
     return (
-        <div className='dashboard'>{mappedSessions}</div>
+        <div className='dashboard'>
+            <h1>Your Sessions:</h1>
+            <div>
+                {mappedSessions}
+            </div>
+            <button>Create New Session</button>
+        </div>
     )
 }
 

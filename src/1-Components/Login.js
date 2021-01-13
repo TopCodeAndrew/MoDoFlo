@@ -27,7 +27,7 @@ function Login(props) {
     return (
         <div className='auth'>
             <div className='container'>
-                <p className="title">Let's get started...</p>
+                <p className="title">Welcome Back!</p>
                 <form className='inputs-container'>
                     <div className='inputs'>
                         <p>Username:</p>
