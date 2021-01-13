@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
+import { connect } from 'react-redux';
+import { loginUser } from '../../src/3-Ducks/userReducer';
 
-export default function Login() {
+function Login(props) {
     const history = useHistory()
 
     const [usernameInput, setUsernameInput] = useState('');
@@ -15,8 +17,8 @@ export default function Login() {
                 email: usernameInput,
                 password: passwordInput
             })
-            .then((res) => {
-                console.log(res)
+            .then(async function wait(res) {
+                await props.loginUser(res.data.user_id)
                 history.push('/dashboard')
             }).catch(err => console.log(err))
 
@@ -51,3 +53,9 @@ export default function Login() {
         </div>
     )
 }
+
+function mapStateToProps(reduxState) {
+    return reduxState
+}
+
+export default connect(mapStateToProps, { loginUser })(Login)

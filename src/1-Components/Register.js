@@ -18,13 +18,9 @@ function Register(props) {
                 email: usernameInput,
                 password: passwordInput
             })
-            .then((res) => {
-                // console.log(res.data.user_id)
+            .then(async function wait(res) {
+                await props.loginUser(res.data.user_id)
                 history.push('/dashboard')
-                // WILL WANT TO PUT THIS INFO ON REDUX STATE
-                props.loginUser(res.data.user_id)
-
-
             }).catch(err => console.log(err))
 
     }
