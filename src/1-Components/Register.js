@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
+import { connect } from 'react-redux';
+import { loginUser } from '../../src/3-Ducks/userReducer';
 
 
 
-export default function Register(props) {
+function Register(props) {
     const history = useHistory()
     const [usernameInput, setUsernameInput] = useState('');
     const [passwordInput, setPasswordInput] = useState('');
@@ -17,8 +19,12 @@ export default function Register(props) {
                 password: passwordInput
             })
             .then((res) => {
-                console.log(res)
+                // console.log(res.data.user_id)
                 history.push('/dashboard')
+                // WILL WANT TO PUT THIS INFO ON REDUX STATE
+                props.loginUser(res.data.user_id)
+
+
             }).catch(err => console.log(err))
 
     }
@@ -52,3 +58,9 @@ export default function Register(props) {
         </div>
     )
 }
+
+function mapStateToProps(reduxState) {
+    return reduxState
+}
+
+export default connect(mapStateToProps, { loginUser })(Register)
