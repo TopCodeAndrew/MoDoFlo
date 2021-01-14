@@ -57,10 +57,10 @@ function Dashboard(props) {
     }
 
 
-    let mappedSessions = sessions.map(e => {
+    let mappedSessions = sessions.map((e, i) => {
         return (
-            <div>
-                <h3></h3>
+            <div key={e.session_id}>
+                <h3>{i + 1}</h3>
                 <h1 onClick={() => history.push(`/dashboard/${e.session_id}}`)}>
                     {e.session_name}
                 </h1>

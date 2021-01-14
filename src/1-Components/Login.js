@@ -32,6 +32,7 @@ function Login(props) {
                     <div className='inputs'>
                         <p>Username:</p>
                         <input
+                            autoFocus
                             className='box'
                             onChange={(e) => setUsernameInput(e.target.value)}
                             placeholder='...' />

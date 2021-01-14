@@ -71,8 +71,19 @@ module.exports = {
 
         db.create_block([session_id, blockTypeId])
             .then(session => {
+                // WILL NEED TO SEND BACK ALL BLOCKS FOR THIS SPECIFIC SESSION...REFERENCE CREATENEWSESSION CONTROLLER//
                 res.sendStatus(200)
             })
     },
 
+    getAllBlocks: async (req, res) => {
+        const db = req.app.get('db')
+
+        const { session_id } = req.params
+
+        db.find_all_blocks([session_id])
+            .then(sessions => {
+                res.status(200).send(sessions)
+            })
+    },
 }

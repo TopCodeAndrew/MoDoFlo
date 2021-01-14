@@ -13,7 +13,7 @@ CREATE TABLE "session" (
 CREATE TABLE "block" (
   "block_id" SERIAL PRIMARY KEY,
   "session_id" SERIAL,
-  "block_type_id" SERIAL
+  "block_type_id" INT
 );
 
 CREATE TABLE "block_type" (
