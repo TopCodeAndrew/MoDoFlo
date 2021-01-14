@@ -1,8 +1,12 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
+
 
 export default function Session(props) {
     const { session_id } = props.match.params;
+    const history = useHistory()
+
 
     const [blocks, setBlocks] = useState([])
 
@@ -16,10 +20,19 @@ export default function Session(props) {
         await axios
             .post(`/api/sessions/${session_id}/blocks`, { block_type_id })
             .then(res => {
-                console.log(res.data, block_type_id)
+                history.push(`/dashboard/${session_id}/${res.data[0].block_id}/${block_type_id}`)
             })
             .catch(err => console.log(err))
     }
+
+    // let createBreakBlock = async (block_type_id) => {
+    //     await axios
+    //         .post(`/api/sessions/${session_id}/blocks`, { block_type_id })
+    //         .then(res => {
+    //             history.push(`/dashboard/${session_id}/${res.data[0].block_id}/${block_type_id}`)
+    //         })
+    //         .catch(err => console.log(err))
+    // }
 
 
     let mappedBlocks = blocks.map((e, i) => {
