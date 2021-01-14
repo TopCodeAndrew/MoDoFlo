@@ -1,19 +1,54 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 
 
 function Dashboard(props) {
+    const { userID } = props
+    const history = useHistory()
+
     const [sessions, setSessions] = useState([])
-    console.log(sessions)
+    const [newSessionName, setNewSessionName] = useState('')
+    const [editSessionName, setEditSessionName] = useState('')
+
 
     useEffect(() => {
-
         axios.get('/api/sessions').then(res => {
             setSessions(res.data)
-            console.log(res.data)
         })
     }, [])
+
+
+    let createSession = async (title) => {
+        if (title === '') {
+            alert('Please give the session a name')
+        } else {
+            await axios.post('/api/sessions', { title }).then(res => {
+                console.log(res)
+            }).catch(err => console.log(err))
+            axios.get('/api/sessions').then(res => {
+                setSessions(res.data)
+            })
+            setNewSessionName('')
+        }
+    }
+
+    let editSession = async (title, session_id) => {
+        if (title === '') {
+            alert('Please give the session a name')
+        } else {
+            await axios.put(`/api/sessions/${session_id}`, { title }).then(res => {
+                console.log(res)
+            }).catch(err => console.log(err))
+
+            axios.get('/api/sessions').then(res => {
+                setSessions(res.data)
+            })
+            setEditSessionName('')
+        }
+    }
+
 
     let deleteSession = async (id) => {
         await axios.delete(`/api/sessions/${id}`).then(res => {
@@ -21,16 +56,26 @@ function Dashboard(props) {
         })
     }
 
+
     let mappedSessions = sessions.map(e => {
         return (
             <div>
                 <h3></h3>
-                <h1 onClick={() => console.log(`clicked on ${e.session_id}`)}>
+                <h1 onClick={() => history.push(`/dashboard/${e.session_id}}`)}>
                     {e.session_name}
                 </h1>
                 <button onClick={() => deleteSession(e.session_id)} >delete</button>
-                <button>edit name</button>
-                <button>test</button>
+                <form>
+                    <button
+                        onClick={(event) => {
+                            editSession(editSessionName, e.session_id)
+                        }}
+                    >edit name</button>
+                    <input onChange={(e) => {
+                        setEditSessionName(e.target.value, userID)
+                    }}
+                        placeholder='new name' />
+                </form>
             </div>
 
         )
@@ -43,7 +88,13 @@ function Dashboard(props) {
             <div>
                 {mappedSessions}
             </div>
-            <button>Create New Session</button>
+            <form>
+                Create New Session:
+                <input placeholder="session name here" onChange={(e) => {
+                    setNewSessionName(e.target.value)
+                }} value={newSessionName} />
+                <button onClick={() => createSession(newSessionName)}>create</button>
+            </form>
         </div>
     )
 }
@@ -55,4 +106,4 @@ function mapStateToProps(reduxState) {
     return reduxState
 }
 
-export default connect(mapStateToProps, {})(Dashboard)
+export default connect(mapStateToProps)(Dashboard)
