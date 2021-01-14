@@ -25,15 +25,6 @@ export default function Session(props) {
             .catch(err => console.log(err))
     }
 
-    // let createBreakBlock = async (block_type_id) => {
-    //     await axios
-    //         .post(`/api/sessions/${session_id}/blocks`, { block_type_id })
-    //         .then(res => {
-    //             history.push(`/dashboard/${session_id}/${res.data[0].block_id}/${block_type_id}`)
-    //         })
-    //         .catch(err => console.log(err))
-    // }
-
 
     let mappedBlocks = blocks.map((e, i) => {
         return (
