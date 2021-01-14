@@ -61,7 +61,7 @@ function Dashboard(props) {
         return (
             <div key={e.session_id}>
                 <h3>{i + 1}</h3>
-                <h1 onClick={() => history.push(`/dashboard/${e.session_id}}`)}>
+                <h1 onClick={() => history.push(`/dashboard/${e.session_id}`)}>
                     {e.session_name}
                 </h1>
                 <button onClick={() => deleteSession(e.session_id)} >delete</button>

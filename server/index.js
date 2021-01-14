@@ -31,7 +31,7 @@ app.delete('/api/sessions/:session_id', sessionCtrl.deleteSession)
 
 app.get('/api/sessions/:session_id/blocks', sessionCtrl.getAllBlocks)
 
-app.post('/api/sessions/:session_id/blocks/:block_id', sessionCtrl.createBlock)
+app.post('/api/sessions/:session_id/blocks', sessionCtrl.createBlock)
 
 
 massive({
