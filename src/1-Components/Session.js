@@ -28,14 +28,12 @@ export default function Session(props) {
 
     let mappedBlocks = blocks.map((e, i) => {
         return (
-            <div key={e.block_id}>
+            <div className='block-line' key={e.block_id}>
                 <h1>{i + 1}</h1>
-                <h3> block_id:
-                    {e.block_id}
-                </h3>
-                <h5> block_type_id:
-                    {e.block_type_id}
-                </h5>
+                <h2>
+                    {(e.block_type_id === 1) ? "Work Block" : null}
+                    {(e.block_type_id === 2) ? "Break Block" : null}
+                </h2>
             </div>
 
         )
@@ -43,11 +41,11 @@ export default function Session(props) {
 
     return (
         <div className="session">
-            <h1>Your Blocks:</h1>
+            <h1 className='title'>Your Blocks:</h1>
             <div>
                 {mappedBlocks}
             </div>
-            <div>
+            <div className='actions'>
                 <button onClick={() => createBlock(1)}>Create Work Block</button>
                 <button onClick={() => createBlock(2)}> Create Break Block</button>
             </div>

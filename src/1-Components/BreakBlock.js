@@ -1,7 +1,11 @@
-import React from 'react'
+import React from 'react';
+import { useHistory } from 'react-router-dom';
 
 export default function BreakBlock(props) {
-    const { session_id, block_id } = props.match.params;
+    console.log(props)
+
+    const history = useHistory()
+    const { session_id } = props.match.params;
 
 
     const [counter, setCounter] = React.useState(300);
@@ -13,12 +17,15 @@ export default function BreakBlock(props) {
 
     return (
         <div className="timer">
-            <div>Counter: {counter}</div>
-            <div>{Math.floor(counter / 60)} : {(counter % 60) < 10 ? 0 : null}{counter % 60}</div>
-            <div>
-                session id:{session_id},
-                block id: {block_id},
+            <div className='timer-box'>
+                <div className="time-left">Time left on Break:</div>
+                <div className='counter'>
+                    <p>
+                        {(Math.floor(counter / 60)) < 10 ? 0 : null}{Math.floor(counter / 60)} : {(counter % 60) < 10 ? 0 : null}{counter % 60}
+                    </p>
+                </div>
             </div>
+            <button onClick={() => history.push(`/dashboard/${session_id}`)}>Back to Session</button>
         </div>
     );
 }

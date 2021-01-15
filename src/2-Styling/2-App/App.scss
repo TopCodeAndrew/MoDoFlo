@@ -6,11 +6,12 @@
   max-width: 100%;
 };
 
-$firstColor : #fbec24;
-$secondColor : #45344d;
-$thirdColor : #5c5462;
-$fourthColor: #9c8e8e;
-$fifthColor: #9b786f;
+$firstColor : #5acf4a;
+$secondColor : #5d5c61;
+$thirdColor : #948d94;
+$fourthColor: #b1a295;
+$fifthColor: #7295ad;
+$sixthColor: #557b94;
 
 
 .App {
@@ -27,4 +28,5 @@ $fifthColor: #9b786f;
 @import '../5-Auth/auth';
 @import '../6-Dashboard/dashboard';
 @import '../7-Session/session';
-@import '../8-Footer/footer';
+@import '../8-Timer/timer';
+@import '../9-Footer/footer';

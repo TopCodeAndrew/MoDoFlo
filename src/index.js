@@ -13,7 +13,7 @@ ReactDOM.render(
       <React.StrictMode>
         <App />
       </React.StrictMode>
-    </HashRouter>,
+    </HashRouter>
   </Provider>,
   document.getElementById('root')
 );
