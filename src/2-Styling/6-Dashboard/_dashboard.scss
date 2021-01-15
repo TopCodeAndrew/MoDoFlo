@@ -1,5 +1,5 @@
 .dashboard{
-    background-color: $secondColor;
+    background-color: $thirdColor;
     min-height: 100vh;
     padding-top: 40px;
     display: flex;
@@ -15,6 +15,7 @@
     
     .session-line{
       border-radius: 15px;
+      border: solid 3px $firstColor;
       width: 80vw;
       height: 45px;
       background-color: $fourthColor;
@@ -26,15 +27,14 @@
         margin-left: 15px;
       }
       .to-edit{
-        background-color: red;
-        width: 40%;
+        width: 300px;
         height: 70%;
         display: flex;
         justify-content: space-around;
         align-items: center;
         margin-right: 10px;
         border-radius: 10px;
-        background-color: $firstColor;
+        background-color: $secondColor;
       }
       .in-to-edit{
         height: 60%;
@@ -44,14 +44,39 @@
 
     .create{
       color: $firstColor;
-      background-color: red;
-      width: 50%;
+      width: 70%;
+      display: flex;
+      justify-content: space-around;
     }
 
 
 
-    @media (max-width: 500px) {
-      background-color: purple;
-      color:green;
-  }
+    @media (max-width: 750px) {
+      .session-line{
+        padding: 0px 20px;
+        height: 120px;
+        flex-direction: column;
+        justify-content: space-around;
+        h1{
+          display: none;
+        }
+        .to-edit{
+          height: 40px;
+        }
+      }
+    }
+
+    @media (max-width: 400px){
+      .session-line{
+        height: 180px;
+        .to-edit{
+          height: 110px;
+          flex-direction: column;
+          margin-bottom: 15px;
+        }
+        .in-to-edit{
+          height: 25px;
+        }
+      }
+    }
 }

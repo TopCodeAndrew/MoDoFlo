@@ -15,6 +15,7 @@ export default function Footer() {
 
     return (
         <div className="footer">
+            <div>Contribute to Code!</div>
             <button onClick={() => logoutUser()}>Logout</button>
         </div>
     )
