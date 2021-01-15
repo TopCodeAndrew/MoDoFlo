@@ -52,6 +52,7 @@ function Dashboard(props) {
 
 
     let deleteSession = async (id) => {
+        console.log(id);
         await axios.delete(`/api/sessions/${id}`).then(res => {
             setSessions(res.data)
         })
@@ -73,16 +74,18 @@ function Dashboard(props) {
                         onClick={() => deleteSession(e.session_id)} >
                         delete
                     </button>
-                    <button
-                        className='in-to-edit'
-                        onClick={(event) => {
-                            editSession(editSessionName, e.session_id)
-                        }}
-                    >edit name</button>
-                    <input
-                        className='in-to-edit'
-                        onChange={(e) => { setEditSessionName(e.target.value, userID) }}
-                        placeholder='new name' />
+                    <form className='edit-name-box'>
+                        <button
+                            className='in-to-edit'
+                            onClick={(event) => {
+                                editSession(editSessionName, e.session_id)
+                            }}
+                        >edit name</button>
+                        <input
+                            className='in-to-edit'
+                            onChange={(e) => { setEditSessionName(e.target.value, userID) }}
+                            placeholder='new name' />
+                    </form>
                 </form>
             </div>
 

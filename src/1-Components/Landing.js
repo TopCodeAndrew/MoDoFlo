@@ -5,11 +5,13 @@ export default function Landing() {
 
     return (
         <div className='landing'>
-            <img className='laptop-photo' src={photo} alt='simple laptop' />
+            <span className='top-photo'>
+                <img className='laptop-photo' src={photo} alt='simple laptop' />
 
-            <span className='title'>
-                <p id='doing'> make doing</p>
-                <p id='simple'> S I M P L E </p>
+                <span className='title'>
+                    <p id='doing'> make doing</p>
+                    <p id='simple'> S I M P L E </p>
+                </span>
             </span>
         </div>
     )

@@ -1,5 +1,5 @@
 .dashboard{
-    background-color: $thirdColor;
+    background-color: $fifthColor;
     min-height: 100vh;
     padding-top: 40px;
     display: flex;
@@ -8,6 +8,7 @@
     position: relative;
     .title{
       margin-bottom: 25px;
+      color: white;
     }
     h1{
       color: $firstColor;
@@ -25,6 +26,7 @@
       align-items: center;
       h1{
         margin-left: 15px;
+        color: white;
       }
       .to-edit{
         width: 300px;
@@ -39,14 +41,30 @@
       .in-to-edit{
         height: 60%;
       }
+
+      .edit-name-box{
+        width: 170px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        input{
+          width: 90px;
+        }
+        
+      }
       
     }
 
     .create{
-      color: $firstColor;
+      color: white;
+      background-color: $firstColor;
+      height: 40px;
       width: 70%;
       display: flex;
       justify-content: space-around;
+      align-items: center;
+      border-radius: 10px;
     }
 
 

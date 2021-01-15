@@ -1,4 +1,7 @@
 .landing{
+  min-height: 100vh;
+  .top-photo{
+
     width: 100vw;
     height: 800px;
     display: flex;
@@ -69,4 +72,5 @@
         }
       }
     }
+  }
   };

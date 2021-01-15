@@ -52,6 +52,7 @@ module.exports = {
     },
 
     deleteSession: async (req, res) => {
+        console.log('got to controller')
         const db = req.app.get('db')
 
         const { user_id } = req.session.user
