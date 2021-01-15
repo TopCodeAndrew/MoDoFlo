@@ -10,7 +10,7 @@
     // align-items: center;
     overflow: hidden;
     position: relative;
-    background-color: rgba(61, 56, 61, 0.993);
+    background-color: rgba(88, 72, 82, 0.993);
 
     .laptop-photo{
       // width: 100%;
@@ -18,7 +18,7 @@
       max-width: none;
       width: 1850px;
       min-width: 100%;
-      opacity: .45;
+      opacity: .7;
       overflow: hidden;
     }
 
@@ -66,9 +66,12 @@
         width: 675px;
       }
       .title{
-        top: 80px;
+        top: 100px;
+        #doing{
+          font-size: 25px;
+        }
         #simple{
-          font-size: 90px;
+          font-size: 60px;
         }
       }
     }

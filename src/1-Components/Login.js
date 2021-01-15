@@ -30,7 +30,7 @@ function Login(props) {
                 <p className="title">Welcome Back!</p>
                 <form className='inputs-container'>
                     <div className='inputs'>
-                        <p>Username:</p>
+                        <p>Email:</p>
                         <input
                             autoFocus
                             className='box'

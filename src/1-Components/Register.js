@@ -21,7 +21,10 @@ function Register(props) {
             .then(async function wait(res) {
                 await props.loginUser(res.data.user_id)
                 history.push('/dashboard')
-            }).catch(err => console.log(err))
+            }).catch(err => {
+                alert('user already exists')
+                console.log(err)
+            })
 
     }
 
@@ -31,7 +34,7 @@ function Register(props) {
                 <p className="title">Let's get started...</p>
                 <div className='inputs-container'>
                     <div className='inputs'>
-                        <p>Username:</p>
+                        <p>Email:</p>
                         <input
                             className='box'
                             onChange={(e) => setUsernameInput(e.target.value)}
