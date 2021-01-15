@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { useHistory } from 'react-router-dom';
+import Footer from './Footer'
 
 
 function Dashboard(props) {
@@ -59,21 +60,28 @@ function Dashboard(props) {
 
     let mappedSessions = sessions.map((e, i) => {
         return (
-            <div key={e.session_id}>
-                <h3>{i + 1}</h3>
-                <h1 onClick={() => history.push(`/dashboard/${e.session_id}`)}>
+            <div className='session-line' key={e.session_id}>
+                <h1>{i + 1}</h1>
+                <h2
+                    onClick={() => history.push(`/dashboard/${e.session_id}`)}>
                     {e.session_name}
-                </h1>
-                <button onClick={() => deleteSession(e.session_id)} >delete</button>
-                <form>
+                </h2>
+
+                <form className='to-edit'>
                     <button
+                        className='in-to-edit'
+                        onClick={() => deleteSession(e.session_id)} >
+                        delete
+                    </button>
+                    <button
+                        className='in-to-edit'
                         onClick={(event) => {
                             editSession(editSessionName, e.session_id)
                         }}
                     >edit name</button>
-                    <input onChange={(e) => {
-                        setEditSessionName(e.target.value, userID)
-                    }}
+                    <input
+                        className='in-to-edit'
+                        onChange={(e) => { setEditSessionName(e.target.value, userID) }}
                         placeholder='new name' />
                 </form>
             </div>
@@ -84,11 +92,11 @@ function Dashboard(props) {
 
     return (
         <div className='dashboard'>
-            <h1>Your Sessions:</h1>
+            <h1 className='title'>Sessions:</h1>
             <div>
                 {mappedSessions}
             </div>
-            <form>
+            <form className="create">
                 Create New Session:
                 <input placeholder="session name here" onChange={(e) => {
                     setNewSessionName(e.target.value)

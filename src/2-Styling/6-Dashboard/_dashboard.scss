@@ -1,5 +1,55 @@
 .dashboard{
     background-color: $secondColor;
+    min-height: 100vh;
+    padding-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    .title{
+      margin-bottom: 25px;
+    }
+    h1{
+      color: $firstColor;
+    }
+    
+    .session-line{
+      border-radius: 15px;
+      width: 80vw;
+      height: 45px;
+      background-color: $fourthColor;
+      display: flex;
+      margin: 30px 40px;
+      justify-content: space-between;
+      align-items: center;
+      h1{
+        margin-left: 15px;
+      }
+      .to-edit{
+        background-color: red;
+        width: 40%;
+        height: 70%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-right: 10px;
+        border-radius: 10px;
+        background-color: $firstColor;
+      }
+      .in-to-edit{
+        height: 60%;
+      }
+      
+    }
+
+    .create{
+      color: $firstColor;
+      background-color: red;
+      width: 50%;
+    }
+
+
+
     @media (max-width: 500px) {
       background-color: purple;
       color:green;
