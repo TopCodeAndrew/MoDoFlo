@@ -14,7 +14,7 @@ export function loginUser(userID) {
     }
 }
 
-export function logout() {
+export function reduxLogoutUser() {
     return {
         type: LOGOUT,
     }

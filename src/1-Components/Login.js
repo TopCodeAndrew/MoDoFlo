@@ -11,7 +11,6 @@ function Login(props) {
     const [passwordInput, setPasswordInput] = useState('');
 
     function sendUserInfo(e) {
-        e.preventDefault();
         axios
             .post('/api/login', {
                 email: usernameInput,

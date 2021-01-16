@@ -1,4 +1,5 @@
 require('dotenv').config();
+const stripe = require('stripe')('sk_test_4eC39HqLyjWDarjtT1zdp7dc');
 const express = require('express');
 const massive = require('massive')
 const session = require('express-session');

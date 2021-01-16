@@ -4,6 +4,7 @@ import { useHistory } from 'react-router-dom';
 
 
 export default function Session(props) {
+    console.log(props)
     const { session_id } = props.match.params;
     const history = useHistory()
 

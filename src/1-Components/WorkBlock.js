@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
 
@@ -8,7 +8,7 @@ export default function Block(props) {
     const { session_id } = props.match.params;
 
 
-    const [counter, setCounter] = React.useState(1500);
+    const [counter, setCounter] = useState(1500);
 
     React.useEffect(() => {
         counter > 0 && setTimeout(() => setCounter(counter - 1), 1000);
