@@ -43,7 +43,7 @@ export default function Donate(props) {
                     value={donationAmount} />
             </div>
             <StripeCheckout
-                stripeKey='pk_test_51IAKa4GUHQ1yJgjQEFLpm0Nq93qBT7U90pY4B501tXWKB4iSwXkX0CKaRZEAiozlixcQwKzlW7KkFWv8JoK0789M00Q3KupYy2'
+                stripeKey='pk_live_51IAKa4GUHQ1yJgjQ6P0nPicBE51uc23f34KwVYl3K3DqfejUdGW8tj2UF8rLWN989GYY1XS5V7q5d7Lwd1UVvSRb00exfqliHK'
                 token={handleToken}
                 billingAddress
                 amount={donationAmount * 100}
