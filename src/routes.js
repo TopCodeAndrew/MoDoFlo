@@ -7,6 +7,7 @@ import Dashboard from './1-Components/Dashboard'
 import Session from './1-Components/Session'
 import WorkBlock from './1-Components/WorkBlock'
 import BreakBlock from './1-Components/BreakBlock'
+import Donate from './1-Components/Donate'
 
 
 export default (
@@ -18,6 +19,7 @@ export default (
         <Route exact path='/dashboard/:session_id' component={Session} />
         <Route exact path='/dashboard/:session_id/:block_id/1' component={WorkBlock} />
         <Route exact path='/dashboard/:session_id/:block_id/2' component={BreakBlock} />
+        <Route exact path='/donate' component={Donate} />
         <Route path='/'> Error: This page does not exist</Route>
     </Switch>
 )
