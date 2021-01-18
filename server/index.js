@@ -60,8 +60,6 @@ app.post('/donate', async (req, res) => {
             },
             { idempotencyKey }
         );
-
-        // console.log('charge:', { charge });
         status = 'success';
     } catch (err) {
         console.error('Error: ', err);
