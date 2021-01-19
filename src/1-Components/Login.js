@@ -13,7 +13,7 @@ function Login(props) {
     function sendUserInfo(e) {
         e.preventDefault();
         axios
-            .post('/api/login', {
+            .post('/auth/login', {
                 email: usernameInput,
                 password: passwordInput
             })

@@ -21,9 +21,9 @@ app.use(
     })
 )
 //  Auth Controllers
-app.post('/api/register', authCtrl.registerUser)
-app.post('/api/login', authCtrl.login)
-app.delete('/api/logout', authCtrl.logout)
+app.post('/auth/register', authCtrl.registerUser)
+app.post('/auth/login', authCtrl.login)
+app.delete('/auth/logout', authCtrl.logout)
 app.get('/auth/user', authCtrl.getUserSession)
 
 // Session Controllers

@@ -17,7 +17,7 @@ function Register(props) {
             alert('Please input a valid email address')
         } else {
             axios
-                .post('/api/login', {
+                .post('/auth/register', {
                     email: usernameInput,
                     password: passwordInput
                 })

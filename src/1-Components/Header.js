@@ -10,7 +10,7 @@ function Header(props) {
 
     function logoutUser() {
         axios
-            .delete('/api/logout')
+            .delete('/auth/logout')
             .then(async function wait() {
                 await props.reduxLogoutUser()
                 history.push(`/`)
