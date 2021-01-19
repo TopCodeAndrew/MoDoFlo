@@ -5,6 +5,7 @@ const initialState = {
 
 const LOGIN_USER = 'LOGIN_USER'
 const LOGOUT = 'LOGOUT'
+const CHECK_USER = 'CHECK_USER'
 
 
 export function loginUser(userID) {
@@ -20,12 +21,20 @@ export function reduxLogoutUser() {
     }
 }
 
+export function checkUser() {
+    return {
+        type: CHECK_USER,
+    }
+}
+
 export default function reducer(state = initialState, action) {
     switch (action.type) {
         case LOGIN_USER:
             return { ...state, userID: action.payload, isLoggedIn: true }
         case LOGOUT:
             return initialState
+        case CHECK_USER:
+            return { ...state, userID: action.payload }
         default:
             return state
     }

@@ -24,6 +24,7 @@ app.use(
 app.post('/api/register', authCtrl.registerUser)
 app.post('/api/login', authCtrl.login)
 app.delete('/api/logout', authCtrl.logout)
+app.get('/auth/user', authCtrl.getUserSession)
 
 // Session Controllers
 app.post('/api/sessions', sessionCtrl.createNewSession)

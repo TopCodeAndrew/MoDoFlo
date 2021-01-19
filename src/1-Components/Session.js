@@ -13,9 +13,10 @@ export default function Session(props) {
 
     useEffect(() => {
         axios.get(`/api/sessions/${session_id}/blocks`).then(res => {
+            console.log(res.data)
             setBlocks(res.data)
         })
-    }, [])
+    }, [session_id])
 
     let createBlock = async (block_type_id) => {
         await axios

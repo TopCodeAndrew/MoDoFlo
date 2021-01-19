@@ -11,44 +11,49 @@ function Login(props) {
     const [passwordInput, setPasswordInput] = useState('');
 
     function sendUserInfo(e) {
+        e.preventDefault();
         axios
             .post('/api/login', {
                 email: usernameInput,
                 password: passwordInput
             })
-            .then(async function wait(res) {
-                await props.loginUser(res.data.user_id)
+            .then((res) => {
+                console.log('login js loginUser complete')
                 history.push('/dashboard')
+                props.loginUser(res.data.user_id)
             }).catch(err => console.log(err))
-
     }
 
     return (
         <div className='auth'>
             <div className='container'>
                 <p className="title">Welcome Back!</p>
-                <form className='inputs-container'>
-                    <div className='inputs'>
-                        <p>Email:</p>
-                        <input
-                            autoFocus
-                            className='box'
-                            onChange={(e) => setUsernameInput(e.target.value)}
-                            placeholder='...' />
+                <form
+                    onSubmit={(e) => sendUserInfo(e)}
+                    className='form'>
+                    <div className='inputs-box' id='trump'>
+                        <div className='inputs'>
+                            <p>Email:</p>
+                            <input
+                                autoFocus
+                                className='box'
+                                onChange={(e) => setUsernameInput(e.target.value)}
+                                placeholder='...' />
+                        </div>
+                        <div className='inputs'>
+                            <p>Password:</p>
+                            <input
+                                className='box'
+                                onChange={(e) => setPasswordInput(e.target.value)}
+                                placeholder='...' />
+                        </div>
                     </div>
-                    <div className='inputs'>
-                        <p>Password:</p>
-                        <input
-                            className='box'
-                            onChange={(e) => setPasswordInput(e.target.value)}
-                            placeholder='...' />
-                    </div>
+                    <button
+                        type='submit'
+                        className="go">
+                        Go!
+                    </button>
                 </form>
-                <button
-                    onClick={(e) => sendUserInfo(e)}
-                    className="go">
-                    Go!
-                </button>
             </div>
         </div>
     )

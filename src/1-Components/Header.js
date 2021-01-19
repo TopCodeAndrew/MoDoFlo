@@ -7,7 +7,6 @@ import { useHistory } from 'react-router-dom';
 
 function Header(props) {
     const history = useHistory()
-    console.log('Header Props:', props)
 
     function logoutUser() {
         axios
@@ -21,16 +20,12 @@ function Header(props) {
     function notLoggedIn() {
         return (
             <div className='to-auth'>
-                <div className='link'>
-                    <Link className='go' to='/login'>
-                        LOGIN
-                    </Link>
-                </div>
-                <div className='link'>
-                    <Link className='go' to='/register'>
-                        REGISTER
-                    </Link>
-                </div>
+                <Link className='link go' to='/login'>
+                    LOGIN
+                </Link>
+                <Link className='link go' to='/register'>
+                    REGISTER
+                </Link>
             </div>
         )
     }
@@ -38,11 +33,9 @@ function Header(props) {
     function LoggedIn() {
         return (
             <div className='to-auth'>
-                <div className='link'>
-                    <div onClick={() => logoutUser()} className='go'>
-                        LOGOUT
-                    </div>
-                </div>
+                <Link className='link go' onClick={() => logoutUser()} to='/landing'>
+                    LOGOUT
+                </Link>
             </div>
         )
     }

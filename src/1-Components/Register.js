@@ -13,46 +13,53 @@ function Register(props) {
 
     function sendUserInfo(e) {
         e.preventDefault();
-        axios
-            .post('/api/register', {
-                email: usernameInput,
-                password: passwordInput
-            })
-            .then(async function wait(res) {
-                await props.loginUser(res.data.user_id)
-                history.push('/dashboard')
-            }).catch(err => {
-                alert('user already exists')
-                console.log(err)
-            })
+        if (!usernameInput.includes('@')) {
+            alert('Please input a valid email address')
+        } else {
+            axios
+                .post('/api/login', {
+                    email: usernameInput,
+                    password: passwordInput
+                })
+                .then((res) => {
+                    console.log('login js loginUser complete')
+                    history.push('/dashboard')
+                    props.loginUser(res.data.user_id)
+                }).catch(err => console.log(err))
+        }
 
     }
 
     return (
         <div className='auth'>
             <div className='container'>
-                <p className="title">Let's get started...</p>
-                <div className='inputs-container'>
-                    <div className='inputs'>
-                        <p>Email:</p>
-                        <input
-                            className='box'
-                            onChange={(e) => setUsernameInput(e.target.value)}
-                            placeholder='...' />
+                <p className="title">Let's get started!</p>
+                <form
+                    onSubmit={(e) => sendUserInfo(e)}
+                    className='form'>
+                    <div className='inputs-box' id='trump'>
+                        <div className='inputs'>
+                            <p>Email:</p>
+                            <input
+                                autoFocus
+                                className='box'
+                                onChange={(e) => setUsernameInput(e.target.value)}
+                                placeholder='...' />
+                        </div>
+                        <div className='inputs'>
+                            <p>Password:</p>
+                            <input
+                                className='box'
+                                onChange={(e) => setPasswordInput(e.target.value)}
+                                placeholder='...' />
+                        </div>
                     </div>
-                    <div className='inputs'>
-                        <p>Password:</p>
-                        <input
-                            className='box'
-                            onChange={(e) => setPasswordInput(e.target.value)}
-                            placeholder='...' />
-                    </div>
-                </div>
-                <button
-                    onClick={(e) => sendUserInfo(e)}
-                    className="go">
-                    Go!
-                </button>
+                    <button
+                        type='submit'
+                        className="go">
+                        Go!
+                    </button>
+                </form>
             </div>
         </div>
     )

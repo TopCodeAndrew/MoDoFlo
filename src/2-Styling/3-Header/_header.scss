@@ -19,6 +19,9 @@
     margin-left: 5vw;
     color: white;
     text-decoration: none;
+    &:hover{
+      color: $firstColor;
+    }
   }
   
   .to-auth{
@@ -40,7 +43,7 @@
 
     .link {
       opacity: 1;
-      background-color: $firstColor;
+      background-color: $secondColor;
       display: flex;
       height: 30px;
       min-width: 100px;
@@ -49,6 +52,10 @@
       border-radius: 15px;
       box-shadow: 1px 1px 10px 1px white;
       margin-right: 15px;
+      color: white;
+      &:hover{
+        background-color: $firstColor;
+      }
 
     }
     

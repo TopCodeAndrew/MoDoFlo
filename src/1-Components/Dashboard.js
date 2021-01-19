@@ -2,10 +2,10 @@ import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import Footer from './Footer'
 
 
 function Dashboard(props) {
+    console.log('dashboard ln 8:', props)
     const { userID } = props
     const history = useHistory()
 
@@ -61,14 +61,17 @@ function Dashboard(props) {
 
     let mappedSessions = sessions.map((e, i) => {
         return (
-            <div className='session-line' key={e.session_id}>
+            <div
+                className='session-line'
+                key={e.session_id}
+                onClick={() => history.push(`/dashboard/${e.session_id}`)}>
                 <h1>{i + 1}</h1>
                 <h2
-                    onClick={() => history.push(`/dashboard/${e.session_id}`)}>
+                >
                     {e.session_name}
                 </h2>
 
-                <form className='to-edit'>
+                <form className='to-edit' onClick={e => e.stopPropagation()}>
                     <button
                         className='in-to-edit'
                         onClick={() => deleteSession(e.session_id)} >
@@ -95,12 +98,12 @@ function Dashboard(props) {
 
     return (
         <div className='dashboard'>
-            <h1 className='title'>Sessions:</h1>
+            <h1 className='title'>Your Projects:</h1>
             <div>
                 {mappedSessions}
             </div>
             <form className="create">
-                Create New Session:
+                Create New Project:
                 <input placeholder="session name here" onChange={(e) => {
                     setNewSessionName(e.target.value)
                 }} value={newSessionName} />
