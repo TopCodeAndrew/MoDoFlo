@@ -33,21 +33,25 @@ export default function Donate(props) {
     }
 
     return (
-        <div>
-            <div className='input-box'>
-                <h1>Donation amount:</h1>
-                <p>$</p>
-                <input
-                    onChange={(e) => setDonationAmount(+e.target.value)}
-                    placeholder='insert donation amount here'
-                    value={donationAmount} />
+        <div className='donate'>
+            <div className='container'>
+                <h1>We appreciate your support!</h1>
+                <h3> Donation Amount:</h3>
+                <div className='input-box'>
+                    <p>$</p>
+                    <input
+                        onChange={(e) => setDonationAmount(+e.target.value)}
+                        value={donationAmount} />
+                </div>
+                <StripeCheckout
+                    stripeKey='pk_live_51IAKa4GUHQ1yJgjQ6P0nPicBE51uc23f34KwVYl3K3DqfejUdGW8tj2UF8rLWN989GYY1XS5V7q5d7Lwd1UVvSRb00exfqliHK'
+                    token={handleToken}
+                    billingAddress
+                    amount={donationAmount * 100}
+                    label='Donate!'
+
+                />
             </div>
-            <StripeCheckout
-                stripeKey='pk_live_51IAKa4GUHQ1yJgjQ6P0nPicBE51uc23f34KwVYl3K3DqfejUdGW8tj2UF8rLWN989GYY1XS5V7q5d7Lwd1UVvSRb00exfqliHK'
-                token={handleToken}
-                billingAddress
-                amount={donationAmount * 100}
-            />
         </div>
     )
 }
