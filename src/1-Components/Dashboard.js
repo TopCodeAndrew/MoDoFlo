@@ -104,7 +104,7 @@ function Dashboard(props) {
             </div>
             <form className="create">
                 Create New Project:
-                <input placeholder="session name here" onChange={(e) => {
+                <input placeholder="project name here" onChange={(e) => {
                     setNewSessionName(e.target.value)
                 }} value={newSessionName} />
                 <button onClick={() => createSession(newSessionName)}>create</button>
