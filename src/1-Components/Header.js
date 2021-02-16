@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { reduxLogoutUser } from '../../src/3-Ducks/userReducer';
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
+import hamburger from '../images/hamburger.png'
 
 function Header(props) {
     const history = useHistory()
@@ -25,11 +26,11 @@ function Header(props) {
 
     function notLoggedIn() {
         return (
-            <div className='to-auth'>
-                <Link className='link go' to='/login'>
+            <div className='link-container'>
+                <Link onClick={() => setMenuToggle(false)} className='link go' to='/login'>
                     LOGIN
                 </Link>
-                <Link className='link go' to='/register'>
+                <Link onClick={() => setMenuToggle(false)} className='link go' to='/register'>
                     REGISTER
                 </Link>
             </div>
@@ -38,8 +39,8 @@ function Header(props) {
 
     function LoggedIn() {
         return (
-            <div className='to-auth'>
-                <Link className='link go' onClick={() => logoutUser()} to='/landing'>
+            <div className='link-container'>
+                <Link onClick={() => setMenuToggle(false)} className='link go' onClick={() => logoutUser()} to='/landing'>
                     LOGOUT
                 </Link>
             </div>
@@ -50,16 +51,23 @@ function Header(props) {
         <div className="header">
             <Link to='/' className='title'> MODOFLO</Link>
 
-            <button className='hamburger' onClick={toggleOpen}>Hamburger</button>
 
-
-            <div className='menu'> {menuToggle ?
-                <span className='to-auth'>{!props.isLoggedIn ? notLoggedIn() : LoggedIn()}
+            <div className='desktop-menu'>
+                <span className='to-auth'>{props.isLoggedIn ? LoggedIn() : notLoggedIn()}
                 </span>
-                :
-                null
+            </div>
 
-            }
+
+
+            <div className='mobile'>
+                <img src={hamburger} className='hamburger' onClick={toggleOpen} />
+                <div className='mobile-menu'> {menuToggle ?
+                    <span className='to-auth'>{!props.isLoggedIn ? notLoggedIn() : LoggedIn()}
+                    </span>
+                    :
+                    null
+                }
+                </div>
             </div>
 
 
