@@ -1,6 +1,6 @@
 .header{
   z-index: 2;
-  background-color: $thirdColor;
+  background-color: white;
   min-height: 50px;
   max-height: 50px;
   width: 100%;
@@ -25,10 +25,10 @@
     font-size: 25px;
     font-weight: 800; 
     margin-left: 5vw;
-    color: white;
+    color: $firstColor;
     text-decoration: none;
     &:hover{
-      color: $firstColor;
+      color: $secondColor;
     }
   }
 
@@ -70,6 +70,7 @@
         box-shadow: 1px 1px 10px 1px white;
         margin-right: 15px;
         color: white;
+        font-weight: 600;
         &:hover{
           background-color: $firstColor;
         }
@@ -118,7 +119,7 @@
       display: flex;
       flex-direction: column;
       align-items: flex-end;
-      background-color: white;
+      background-color: $secondColor;
       width: 100vw;
       .to-auth{
         min-width: 50px;
@@ -143,6 +144,9 @@
           margin-right: 0;
           border-radius: 15px;
           box-shadow: 3px 3px 3px 2px rgba(0,0,0,0.8);
+          background-color: white;
+          color: $firstColor;
+          font-weight: 800;
         }
       }
     }

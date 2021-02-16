@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { reduxLogoutUser } from '../../src/3-Ducks/userReducer';
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
-import hamburger from '../images/hamburger.png'
+import hamburger from '../images/hamburger-icon.png'
 
 function Header(props) {
     const history = useHistory()
