@@ -52,7 +52,11 @@ function Header(props) {
         <div className="header">
             <div className='top-header'>
                 <Link to='/' className='title'> MODOFLO</Link>
-                <img src={hamburger} className='hamburger' onClick={toggleOpen} />
+                <img
+                    src={hamburger}
+                    className='hamburger'
+                    onClick={toggleOpen}
+                    alt='hamburger-icon' />
             </div>
 
 

@@ -1,5 +1,7 @@
 .landing{
   min-height: 100vh;
+  position: relative;
+  top: 5px;
   .top-photo{
 
     width: 100vw;
@@ -20,6 +22,7 @@
       min-width: 100%;
       opacity: .7;
       overflow: hidden;
+      position: absolute;
     }
 
     .title {
@@ -32,18 +35,40 @@
       left: 0;
       right: 0;
       text-align: center;
-      top: 230px;
+      top: 210px;
       min-width: 250px;
       z-index: 1;
       #doing{
         margin: 0;
+        opacity: 0;
+      }
+      div{
+        color: white
       };
 
       #simple{
         margin: 0;
         font-size: 220px;
+        opacity: 0;
+        color: $firstColor;
       }
     }
+
+    
+      .down-arrow{
+        height: 80px;
+        width: 80px;
+        position: absolute;
+        top: 420px;
+        left:0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+        opacity: 0;
+      }
+
+    
+
     
 
 
@@ -53,7 +78,7 @@
         width: 1350px;
       }
       .title{
-        top: 210px;
+        top: 160px;
         #simple{
           font-size: 100px;
         }
@@ -66,7 +91,7 @@
         width: 675px;
       }
       .title{
-        top: 100px;
+        top: 55px;
         #doing{
           font-size: 25px;
         }
