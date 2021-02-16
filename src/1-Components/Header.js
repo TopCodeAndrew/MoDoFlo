@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { reduxLogoutUser } from '../../src/3-Ducks/userReducer';
@@ -7,6 +7,7 @@ import { useHistory } from 'react-router-dom';
 
 function Header(props) {
     const history = useHistory()
+    const [menuToggle, setMenuToggle] = useState(false)
 
     function logoutUser() {
         axios
@@ -15,6 +16,11 @@ function Header(props) {
                 await props.reduxLogoutUser()
                 history.push(`/`)
             })
+    }
+
+    function toggleOpen() {
+        setMenuToggle(!menuToggle);
+        console.log(menuToggle)
     }
 
     function notLoggedIn() {
@@ -43,8 +49,20 @@ function Header(props) {
     return (
         <div className="header">
             <Link to='/' className='title'> MODOFLO</Link>
-            <span className='to-auth'>{!props.isLoggedIn ? notLoggedIn() : LoggedIn()}
-            </span>
+
+            <button className='hamburger' onClick={toggleOpen}>Hamburger</button>
+
+
+            <div className='menu'> {menuToggle ?
+                <span className='to-auth'>{!props.isLoggedIn ? notLoggedIn() : LoggedIn()}
+                </span>
+                :
+                null
+
+            }
+            </div>
+
+
         </div>
     )
 }
