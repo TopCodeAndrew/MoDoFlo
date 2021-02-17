@@ -1,7 +1,6 @@
 .landing{
   min-height: 100vh;
   position: relative;
-  top: 5px;
   .top-photo{
 
     width: 100vw;
@@ -35,7 +34,7 @@
       left: 0;
       right: 0;
       text-align: center;
-      top: 210px;
+      top: 150px;
       min-width: 250px;
       z-index: 1;
       #doing{
@@ -47,8 +46,10 @@
       };
 
       #simple{
+        position: relative;
+        top: 130px;
         margin: 0;
-        font-size: 220px;
+        font-size: 180px;
         opacity: 0;
         color: $firstColor;
       }
@@ -56,10 +57,10 @@
 
     
       .down-arrow{
-        height: 80px;
-        width: 80px;
+        height: 100px;
+        width: 100px;
         position: absolute;
-        top: 420px;
+        top: 520px;
         left:0;
         right: 0;
         margin-left: auto;
@@ -73,31 +74,41 @@
 
 
     @media (max-width: 970px) {
-      height: 600px;
+      height: 700px;
       .laptop-photo{
-        width: 1350px;
+        width: 1580px;
       }
       .title{
-        top: 160px;
+        top: 190px;
         #simple{
           font-size: 100px;
         }
       }
+      .down-arrow{
+        top: 490px;
+        height: 90px;
+        width: 90px;
+      }
     }
 
     @media (max-width: 530px) {
-      height: 300px;
+      height: 500px;
       .laptop-photo{
-        width: 675px;
+        width: 1140px;
       }
       .title{
-        top: 55px;
+        top: 120px;
         #doing{
           font-size: 25px;
         }
         #simple{
           font-size: 60px;
         }
+      }
+      .down-arrow{
+        top: 370px;
+        height: 60px;
+        width: 60px;
       }
     }
   }

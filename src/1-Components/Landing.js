@@ -18,14 +18,9 @@ export default function Landing() {
                     > make doing</motion.div>
                     <motion.p
                         id='simple'
-                        animate={{ y: 50, opacity: 1, color: "white" }}
+                        animate={{ y: -50, opacity: 1, color: "white" }}
                         transition={{ ease: "easeOut", delay: 2, duration: 2.5 }}>
-                        <motion.div
-                            animate={{ color: "white", scale: 1.03 }}
-                            transition={{ delay: 3.1, yoyo: 3, duration: .3 }}
-                        >
-                            S I M P L E
-                        </motion.div>
+                        S I M P L E
                     </motion.p>
                 </span>
                 <motion.img

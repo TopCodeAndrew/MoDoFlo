@@ -27,7 +27,7 @@ function Header(props) {
 
     function notLoggedIn() {
         return (
-            <div className='to-auth link-container logged-out'>
+            <div className='to-auth link-container'>
                 <Link onClick={() => setMenuToggle(false)} className='link go' to='/login'>
                     LOGIN
                 </Link>
@@ -59,7 +59,6 @@ function Header(props) {
                     alt='hamburger-icon' />
             </div>
 
-
             <div className='desktop-menu'>
                 <span className='desktop-menu to-auth'>{props.isLoggedIn ? LoggedIn() : notLoggedIn()}
                 </span>
@@ -67,15 +66,14 @@ function Header(props) {
 
 
 
-            {/* <div className='mobile'> */}
-            <div className='mobile-menu'> {menuToggle ?
-                <span className='to-auth'>{!props.isLoggedIn ? notLoggedIn() : LoggedIn()}
+
+            <div> {menuToggle ?
+                <span className='to-auth mobile-menu'>{props.isLoggedIn ? LoggedIn() : notLoggedIn()}
                 </span>
                 :
                 null
             }
             </div>
-            {/* </div> */}
 
 
         </div>
