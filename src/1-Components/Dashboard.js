@@ -2,6 +2,8 @@ import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { useHistory } from 'react-router-dom';
+import garbageCan from '../images/garbage.png';
+import pencil from '../images/edit.png'
 
 
 function Dashboard(props) {
@@ -12,6 +14,8 @@ function Dashboard(props) {
     const [sessions, setSessions] = useState([])
     const [newSessionName, setNewSessionName] = useState('')
     const [editSessionName, setEditSessionName] = useState('')
+    const [toggleEdit, setToggleEdit] = useState(false)
+    const [whichEdit, setWhichEdit] = useState(0)
 
 
     useEffect(() => {
@@ -47,6 +51,8 @@ function Dashboard(props) {
                 setSessions(res.data)
             })
             setEditSessionName('')
+            setWhichEdit(false)
+            setToggleEdit(false)
         }
     }
 
@@ -56,6 +62,16 @@ function Dashboard(props) {
         await axios.delete(`/api/sessions/${id}`).then(res => {
             setSessions(res.data)
         })
+    }
+
+    function handleEdit(sessionId) {
+        if (sessionId !== whichEdit) {
+            console.log('hit')
+            setWhichEdit(sessionId)
+            setToggleEdit(true)
+        } else {
+            setToggleEdit(!toggleEdit);
+        }
     }
 
 
@@ -72,23 +88,31 @@ function Dashboard(props) {
                 </h2>
 
                 <form className='to-edit' onClick={e => e.stopPropagation()}>
-                    <button
+
+                    <img className='in-to-edit' src={pencil} onClick={() => handleEdit(e.session_id)} />
+
+                    <div>{whichEdit === e.session_id && toggleEdit === true ? (
+                        <form className='edit-name-box'>
+                            <input
+                                className='in-to-edit'
+                                onChange={(e) => { setEditSessionName(e.target.value, userID) }}
+                                placeholder='new name' />
+                            <button
+                                className='in-to-edit'
+                                onClick={(event) => {
+                                    editSession(editSessionName, e.session_id)
+                                }}
+                            >edit name</button>
+                        </form>)
+                        :
+                        null
+                    }
+                    </div>
+
+                    <img src={garbageCan}
                         className='in-to-edit'
-                        onClick={() => deleteSession(e.session_id)} >
-                        delete
-                    </button>
-                    <form className='edit-name-box'>
-                        <button
-                            className='in-to-edit'
-                            onClick={(event) => {
-                                editSession(editSessionName, e.session_id)
-                            }}
-                        >edit name</button>
-                        <input
-                            className='in-to-edit'
-                            onChange={(e) => { setEditSessionName(e.target.value, userID) }}
-                            placeholder='new name' />
-                    </form>
+                        onClick={() => deleteSession(e.session_id)} />
+
                 </form>
             </div>
 
