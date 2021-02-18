@@ -1,5 +1,7 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+
 
 
 
@@ -9,9 +11,9 @@ export default function Footer(props) {
 
     return (
         <div className="footer">
-            <div
+            <Link
                 className='contribute'
-                onClick={() => { history.push('/donate') }}>Contribute to MODOFLO!</div>
+                to='/donate'>Contribute to MODOFLO!</Link>
         </div>
     )
 }

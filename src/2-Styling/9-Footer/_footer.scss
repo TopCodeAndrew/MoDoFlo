@@ -2,14 +2,26 @@
     position: sticky;
     z-index: 2;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     padding: 0px 20px;
     color: white;
-    bottom:0;
-    background-color: $sixthColor;
-    height: 25px;
+    bottom: -1px;
+    background-color: white;
+    height: 30px;
+    opacity: .9;
+    .contribute{
+        font-weight: 700;
+        font-size: 20px;
+        color: $firstColor;
+        &:hover{
+            color: $secondColor;
+          }
+    }
 
+    @media (max-width: 1000px){
+        justify-content: center;
+    }
 
     
 }

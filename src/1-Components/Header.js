@@ -4,7 +4,8 @@ import { connect } from 'react-redux';
 import { reduxLogoutUser } from '../../src/3-Ducks/userReducer';
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
-import hamburger from '../images/hamburger-icon.png'
+import hamburger from '../images/hamburger-icon.png';
+
 
 function Header(props) {
     const history = useHistory()
@@ -44,6 +45,9 @@ function Header(props) {
                 <Link className='link go' onClick={() => logoutUser()} to='/landing'>
                     LOGOUT
                 </Link>
+                <Link className='link go' to='/dashboard'>
+                    PROJECTS
+                </Link>
             </div>
         )
     }
@@ -67,7 +71,7 @@ function Header(props) {
 
 
 
-            <div> {menuToggle ?
+            <div className='kill-doubles'> {menuToggle ?
                 <span className='to-auth mobile-menu'>{props.isLoggedIn ? LoggedIn() : notLoggedIn()}
                 </span>
                 :

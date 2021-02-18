@@ -3,7 +3,8 @@ import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import garbageCan from '../images/garbage.png';
-import pencil from '../images/edit.png'
+import pencil from '../images/edit.png';
+
 
 
 function Dashboard(props) {

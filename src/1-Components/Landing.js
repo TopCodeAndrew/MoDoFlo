@@ -1,11 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import photo from '../images/Simple-Laptop-banner.jpeg';
 import arrow from '../images/down-arrow.png';
 import { motion } from 'framer-motion';
-import ReactPlayer from 'react-player';
 import laptopGuy from '../images/laptop-guy.jpg'
 
 export default function Landing() {
+    const [yPosition, setYPosition] = useState(0)
+
+    function handleScrollClick(yCoordinate) {
+        for (let i = window.scrollY; i <= yCoordinate; i++) {
+            setTimeout(() => (window.scroll(0, i)), i * 2);
+        }
+    }
+
 
     return (
         <div className='landing'>
@@ -30,7 +37,8 @@ export default function Landing() {
                     animate={{ y: 15, opacity: .8 }}
                     transition={{ yoyo: Infinity, ease: "easeOut", delay: 4, duration: .5 }}
                     src={arrow}
-                    alt='down-arrow' />
+                    alt='down-arrow'
+                    onClick={() => handleScrollClick(450)} />
             </span>
             <div className='about'>
                 <h1>How it Works:</h1>
