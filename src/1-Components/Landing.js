@@ -2,6 +2,8 @@ import React from 'react';
 import photo from '../images/Simple-Laptop-banner.jpeg';
 import arrow from '../images/down-arrow.png';
 import { motion } from 'framer-motion';
+import ReactPlayer from 'react-player';
+import laptopGuy from '../images/laptop-guy.jpg'
 
 export default function Landing() {
 
@@ -26,13 +28,22 @@ export default function Landing() {
                 <motion.img
                     className='down-arrow'
                     animate={{ y: 15, opacity: .8 }}
-                    transition={{ yoyo: Infinity, ease: "easeOut", delay: 5, duration: .5 }}
+                    transition={{ yoyo: Infinity, ease: "easeOut", delay: 4, duration: .5 }}
                     src={arrow}
                     alt='down-arrow' />
             </span>
             <div className='about'>
                 <h1>How it Works:</h1>
+                <div>
+                    <span>
+                        <p>1. Register for an account</p>
+                        <p>2. Create a project</p>
+                        <p>3. Start a work/ break session</p>
+                    </span>
+
+                    <img className='laptop' src={laptopGuy} />
+                </div>
             </div>
-        </div >
+        </div>
     )
 }
