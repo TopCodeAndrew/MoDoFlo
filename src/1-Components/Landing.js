@@ -14,7 +14,7 @@ export default function Landing() {
                     <motion.div
                         id='doing'
                         animate={{ y: 50, opacity: 1, scale: 1.3 }}
-                        transition={{ ease: "easeOut", delay: 1, duration: 2.5 }}
+                        transition={{ ease: "easeOut", delay: .3, duration: 3.2 }}
                     > make doing</motion.div>
                     <motion.p
                         id='simple'
@@ -30,9 +30,9 @@ export default function Landing() {
                     src={arrow}
                     alt='down-arrow' />
             </span>
-            <span className='about'>
-                test
-            </span>
+            <div className='about'>
+                <h1>How it Works:</h1>
+            </div>
         </div >
     )
 }

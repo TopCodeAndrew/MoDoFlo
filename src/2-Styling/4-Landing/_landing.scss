@@ -57,15 +57,15 @@
 
     
       .down-arrow{
-        height: 100px;
-        width: 100px;
+        height: 80px;
+        width: 120px;
         position: absolute;
-        top: 520px;
+        top: 570px;
         left:0;
         right: 0;
         margin-left: auto;
         margin-right: auto;
-        opacity: 0;
+        opacity: .0;
       }
 
     
@@ -85,8 +85,8 @@
         }
       }
       .down-arrow{
-        top: 490px;
-        height: 90px;
+        top: 520px;
+        height: 60px;
         width: 90px;
       }
     }
@@ -106,10 +106,23 @@
         }
       }
       .down-arrow{
-        top: 370px;
-        height: 60px;
+        top: 390px;
+        height: 40px;
         width: 60px;
       }
+    }
+  }
+
+
+
+  .about{
+    height: 80vh;
+    width: 100vw;
+    background-color: black;
+    padding: 10px;
+    h1{
+      color: white;
+      margin-top: 20px;
     }
   }
   };
