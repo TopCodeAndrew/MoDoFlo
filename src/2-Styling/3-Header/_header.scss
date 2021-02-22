@@ -120,13 +120,14 @@
 
     .mobile-menu{
       position: absolute;
+      backdrop-filter: blur(10px);
       top: 50px;
       max-width: 100vw;
       right: 0;
       display: flex;
       flex-direction: column;
       align-items: flex-end;
-      background-color: $secondColor;
+      background: rgba(128, 128, 128, 0.726);
       width: 100vw;
       .to-auth{
         width: 60px;
